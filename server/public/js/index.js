@@ -49,21 +49,23 @@
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(2);
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 	'use strict';
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Test = function Test() {
-	  _classCallCheck(this, Test);
-
-	  this.a = 'hello world';
-	};
-
-	var test = new Test();
-
-	document.body.innerHTML = test.a;
+	{
+	  var regex = new RegExp('xyz', 'i');
+	  var regex2 = new RegExp(/xyz/i);
+	  console.log(regex.test('xyz123'), regex2.test('xyz123'));
+	}
 
 /***/ })
 /******/ ]);
