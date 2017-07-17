@@ -8703,90 +8703,51 @@
 
 	'use strict';
 
-	{
-	  var test = function test(x) {
-	    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'world';
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-	    console.log('默认值', x, y);
+	{
+	  // 简洁表示法
+	  var o = 1;
+	  var k = 2;
+	  var es5 = {
+	    o: o,
+	    k: k
 	  };
-
-	  test('hello');
-	  test('hello', 'kill');
-	}
-
-	{
-	  var test2 = function test2(x) {
-	    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : x;
-
-	    console.log('作用域', x, y);
+	  var es6 = {
+	    o: o,
+	    k: k
 	  };
+	  console.log(es5, es6);
 
-	  var x = 'test';
-
-	  test2('kill');
-	}
-
-	{
-	  var test3 = function test3() {
-	    for (var _len = arguments.length, arg = Array(_len), _key = 0; _key < _len; _key++) {
-	      arg[_key] = arguments[_key];
+	  var es5_method = {
+	    hello: function hello() {
+	      console.log('hello');
 	    }
-
-	    var _iteratorNormalCompletion = true;
-	    var _didIteratorError = false;
-	    var _iteratorError = undefined;
-
-	    try {
-	      for (var _iterator = arg[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	        var v = _step.value;
-
-	        console.log('test3', v);
-	      }
-	    } catch (err) {
-	      _didIteratorError = true;
-	      _iteratorError = err;
-	    } finally {
-	      try {
-	        if (!_iteratorNormalCompletion && _iterator.return) {
-	          _iterator.return();
-	        }
-	      } finally {
-	        if (_didIteratorError) {
-	          throw _iteratorError;
-	        }
-	      }
+	  };
+	  var es6_method = {
+	    hello: function hello() {
+	      console.log('hello');
 	    }
 	  };
 
-	  test3(1, 2, 3, 4, 'a');
+	  console.log(es5_method.hello(), es6_method.hello());
 	}
 
 	{
-	  var _console;
+	  // 属性表达式
+	  var a = 'b';
+	  var es5_obj = {
+	    a: 'c'
+	  };
 
-	  (_console = console).log.apply(_console, [1, 2, 3, 4]);
+	  var es6_obj = _defineProperty({}, a, 'c');
+
+	  console.log(es5_obj, es6_obj);
 	}
 
 	{
-	  var arrow = function arrow(v) {
-	    return v * 2;
-	  };
-	  var arrow2 = function arrow2() {
-	    return 5;
-	  };
-	  console.log('arrow', arrow2());
-	}
-
-	{
-	  var tail = function tail(x) {
-	    console.log('tail', x);
-	  };
-
-	  var fx = function fx(x) {
-	    return tail(x);
-	  };
-
-	  fx(123);
+	  // 新增Api
+	  console.log('字符串', Object.is('abc', 'abc'), 'abc' === 'abc');
 	}
 
 /***/ })
