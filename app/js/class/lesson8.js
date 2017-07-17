@@ -43,4 +43,5 @@
 {
   // 新增Api
   console.log('字符串', Object.is('abc', 'abc'), 'abc' === 'abc');
+
 }
